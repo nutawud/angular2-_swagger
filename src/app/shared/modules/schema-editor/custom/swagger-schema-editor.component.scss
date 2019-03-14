@@ -1,0 +1,105 @@
+/*	
+ * Copyright 2017 Denis Martin.  This file is part of swadit.
+ * 
+ * swadit is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * swadit is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with swadit.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+.swagger-schema-editor {
+	font-family: Arial;
+	font-size: 10pt;
+}
+
+.btn {
+	font-size: 10pt;
+	padding: 4px 6px;
+	min-height: 1.95em;
+}
+
+.schema-control {
+	font-size: 10pt;
+	padding: 4px 6px;
+	min-height: 1.95em;
+}
+
+.border-left {
+	border-left: 1px solid #eeeeee;
+}
+
+select.schema-control:not([size]):not([multiple]) {
+	max-width: 15em;
+	height: 1.95em;
+}
+
+.schemaDescription {
+	width: 30em;
+}
+
+.no-padding {
+	padding: 0;
+}
+
+table {
+	margin-bottom: 0;
+}
+
+td {
+	padding-right: 0;
+}
+
+td.label-text {
+	padding-right: 4px;
+}
+
+.typePreview {
+	color: #bbb;
+	padding-top: 2px;
+	padding-left: 3px;
+}
+
+.input-group-addon {
+	font-size: 1em;
+	padding: 0.3em 0.5em;
+}
+
+.propertyAddMargin {
+	margin-top: 3px;
+}
+
+.propertyTypeAddon {
+	color: #888;
+	font-size: 80%;
+	width: 8.1em;
+	text-align: left;
+}
+
+.propertyRequired {
+	color: #999;
+	font-size: 70%;
+}
+
+.propertyRequired:hover {
+	color: #555;
+}
+
+.propertyIsRequired {
+	color: #f55;
+}
+
+.propertyIsRequired:hover {
+	color: red;
+}
+
+.fa-fw-sm {
+	width: 0.5em;
+}

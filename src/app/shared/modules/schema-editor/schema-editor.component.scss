@@ -1,0 +1,73 @@
+/*	
+ * Copyright 2017 Denis Martin.  This file is part of swadit.
+ * 
+ * swadit is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * swadit is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with swadit.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+label {
+    font-size: 80%;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 0.5rem;
+}
+
+.monospace {
+    font-family: monospace;
+}
+
+::-webkit-input-placeholder {
+    color: #ccc;
+}
+
+.header {
+    margin-bottom: 0.3rem;
+}
+
+.input-wrap {
+	display: block;
+	width: 100%;
+    padding: 0;
+}
+
+.input-wrap input, .input-wrap select {
+	display: block;
+    width: 100%;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    border-color: #d9d9d9;
+}
+
+.input-wrap input:focus, .input-wrap select:focus {
+    border-color: #5cb3fd;
+}
+
+.input-group-overlapping-border {
+    margin-bottom: -1px;
+}
+
+.input-group-overlapping-border input, .input-group-overlapping-border .input-group-addon {
+    border-color: #d9d9d9;
+}
+
+.input-group-overlapping-border input:focus {
+    border-color: #5cb3fd;
+}
+
+.form-control {
+    width: 100%;
+}

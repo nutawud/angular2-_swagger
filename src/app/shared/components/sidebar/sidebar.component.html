@@ -1,0 +1,87 @@
+<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">
+    <ul class="list-group">
+        <div class="nested-menu when-collapsed">
+            <a class="list-group-item" (click)="addExpandClass('file')">
+                <span><i class="fa fa-fw fa-folder-open"></i> {{ 'File' | translate }}</span>
+            </a>
+            <li class="nested" [class.expand]="showMenu === 'file'">
+                <ul class="submenu">
+                    <li><a href="javascript:void(0)" (click)="apis.newFile()">
+                        <i class="fa fa-fw fa-file"></i> {{ 'New' | translate }}</a></li>
+                    <li><a href="javascript:void(0)" (click)="apis.openFileModal()">
+                        <i class="fa fa-fw fa-folder-open"></i> {{ 'Open' | translate }}</a></li>
+                    <li><a href="javascript:void(0)" (click)="apis.addFilesModal()">
+                        <i class="fa fa-fw fa-plus"></i> {{ 'Add' | translate }}</a></li>
+                    <li><a href="javascript:void(0)" (click)="apis.downloadFileModal()">
+                        <i class="fa fa-fw fa-download"></i> {{ 'Download' | translate }}</a></li>
+                    <li><a [routerLink]="['/source']">
+                        <i class="fa fa-fw fa-align-left"></i> {{ 'Edit Source' | translate }}</a></li>
+                    <!--
+                    <li><a [routerLink]="['/print']">
+                        <i class="fa fa-fw fa-print"></i> {{ 'Print' | translate }}</a></li>
+                    -->
+                    <li><a [routerLink]="['/swadoc']">
+                        <i class="fa fa-fw fa-print"></i> {{ 'Print Preview' | translate }}</a></li>
+                    <li><a [routerLink]="['/swaggerui']">
+                        <i class="fa fa-fw fa-eye"></i> Swagger UI</a></li>
+                    <!--
+                    <li><a href="javascript:void(0)" (click)="apis.settingsModal()">
+                        <i class="fa fa-fw fa-cog"></i> {{ 'Settings' | translate }}</a></li>
+                    -->
+                </ul>
+            </li>
+        </div>
+        <a [routerLink]="['/api-info']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-info"></i>&nbsp;API Info
+        </a>
+        <a [routerLink]="['/definitions']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-book"></i>&nbsp;Definitions
+        </a>
+        <a [routerLink]="['/parameters']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-question"></i>&nbsp;Parameters
+        </a>
+        <a [routerLink]="['/responses']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-reply"></i>&nbsp;Responses
+        </a>
+        <a [routerLink]="['/paths']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-road"></i>&nbsp;Paths
+        </a>
+
+        <div class="list-group-item">
+            <input type="text" class="form-control" placeholder="Filter paths" [(ngModel)]="filterText">
+            <span class="input-clear-button" *ngIf="filterText" (click)="filterText=''">
+                <i class="fa fa-times"></i>
+            </span>
+        </div>
+
+        <a *ngFor="let p of apis.filterList(apis.keys(apis.current['paths']), filterText, true); let index = index"
+            [routerLink]="['/path', p]" [routerLinkActive]="['router-link-active']" class="list-group-item" 
+            style="font-size: 80%">
+            {{p}}
+        </a>
+
+        <!--
+        <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass('pages')">
+                <span><i class="fa fa-plus"></i>&nbsp; {{ 'Menu' | translate }}</span>
+            </a>
+            <li class="nested" [class.expand]="showMenu === 'pages'">
+                <ul class="submenu">
+                    <li>
+                        <a href="javascript:void(0)"><span>{{ 'Submenu' | translate }}</span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)"><span>{{ 'Submenu' | translate }}</span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)"><span>{{ 'Submenu' | translate }}</span></a>
+                    </li>
+                </ul>
+            </li>
+        </div>
+        <a [routerLink]="['/blank-page']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-file-o"></i>&nbsp;{{ 'Blank Page' | translate }}
+        </a>
+        -->
+    </ul>
+</nav>

@@ -1,0 +1,133 @@
+{
+	"title": "A JSON Schema for Swagger 2.0 API.",
+	"id": "http://swagger.io/v2/schema.json#/definitions/operation",
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"required": [
+		"responses"
+	],
+	"additionalProperties": false,
+	"patternProperties": {
+		"^x-": {
+			"$ref": "#/definitions/vendorExtension"
+		}
+	},
+	"x-swadit-editor-groups": [
+		{
+			"x-swadit-editor-grid": [
+				[ "summary", "deprecated" ],
+				[ "description" ]
+			],
+			"x-swadit-editor-grid-cols": {
+				"summary": 10, "deprecated": 2,
+				"description": 12
+			}
+		},
+		{
+			"x-swadit-editor-grid": [
+				[ "operationId", "schemes" ],
+				[ "consumes", "produces" ],
+				[ "tags" ]
+			],
+			"x-swadit-editor-grid-cols": {
+				"operationId": 8, "schemes": 4,
+				"consumes": 6, "produces": 6,
+				"tags": 12
+			}
+		},
+		{
+			"x-swadit-editor-grid": [
+				[ "externalDocs" ]
+			],
+			"x-swadit-editor-grid-cols": {
+				"externalDocs": 12
+			}
+		}
+	],
+	"properties": {
+		"summary": {
+			"type": "string",
+			"description": "A brief summary of the operation."
+		},
+		"deprecated": {
+			"type": "boolean",
+			"default": false
+		},
+		"description": {
+			"type": "string",
+			"description": "A longer description of the operation, GitHub Flavored Markdown is allowed.",
+			"x-swadit-input-multiline": 10,
+			"x-swadit-input-class": "monospace"
+		},
+		"externalDocs": {
+			"x-swadit-editor-card": true,
+			"type": "object",
+			"additionalProperties": false,
+			"description": "Information about external documentation",
+			"required": [
+				"url"
+			],
+			"properties": {
+				"url": {
+					"type": "string",
+					"format": "uri"
+				},
+				"description": {
+					"type": "string"
+				}
+			}
+		},
+		"tags": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"uniqueItems": true
+		},
+		"operationId": {
+			"type": "string",
+			"description": "A unique identifier of the operation."
+		},
+		"produces": {
+			"description": "A list of MIME types the API can produce.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "description": "The MIME type of the HTTP message."
+      },
+      "uniqueItems": true
+		},
+		"consumes": {
+			"description": "A list of MIME types accepted by the API.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "description": "The MIME type of the HTTP message."
+      },
+      "uniqueItems": true
+		},
+		"parameters": {
+			"$ref": "#/definitions/parametersList"
+		},
+		"responses": {
+			"$ref": "#/definitions/responses"
+		},
+		"schemes": {
+			"type": "array",
+      "description": "The transfer protocol of the API.",
+      "items": {
+        "type": "string",
+        "enum": [
+          "http",
+          "https",
+          "ws",
+          "wss"
+        ]
+      },
+      "uniqueItems": true
+		},
+		"security": {
+			"$ref": "#/definitions/security"
+		}
+	}
+}
